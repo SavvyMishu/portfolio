@@ -1,5 +1,5 @@
-
 import { profile } from "../data/profile";
+import profileImage from "../assets/tithi-profile.jpg";
 
 function Hero() {
   return (
@@ -37,14 +37,15 @@ function Hero() {
       </div>
 
       <div className="hero-image">
-        <div className="photo-placeholder">
-          <span>TB</span>
-          <p>YOUR PHOTO GOES HERE</p>
-          <small>Professional portrait coming soon</small>
-        </div>
+        <img
+          src={profileImage}
+          alt="Portrait of Tithi Bala"
+          className="hero-portrait"
+        />
       </div>
     </section>
   );
 }
 
 export default Hero;
+
