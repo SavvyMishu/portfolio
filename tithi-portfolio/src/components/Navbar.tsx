@@ -10,9 +10,7 @@ function Navbar() {
       <nav className="navbar-container">
 
         {/* Logo */}
-        <a href="#home" className="navbar-logo">
-          TB<span>.</span>
-        </a>
+        <a href="#home" className="navbar-logo">Tithi Bala</a>
 
         {/* Mobile Menu Button */}
         <button
