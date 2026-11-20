@@ -1,26 +1,47 @@
 
+import { profile } from "../data/profile";
+
 function Hero() {
   return (
-    <section id="home">
-      <div>
-        <p>Hello, I'm Tithi Bala</p>
-
-        <h1>
-          Building Digital Experiences That Matter.
-        </h1>
-
-        <p>
-          Computer Science student focused on software
-          engineering, development and research.
+    <section id="home" className="hero">
+      <div className="hero-content">
+        <p className="hero-greeting">
+          HELLO, I'M {profile.name.toUpperCase()}
         </p>
 
-        <a href="#projects">View My Work</a>
-        <a href="#about">About Me</a>
+        <h1>
+          Turning Ideas
+          <br />
+          Into Practical
+          <br />
+          <span>Software Solutions.</span>
+        </h1>
+
+        <p className="hero-description">
+          {profile.introduction}
+        </p>
+
+        <div className="hero-actions">
+          <a href="#projects" className="btn-primary">
+            VIEW MY WORK →
+          </a>
+
+          <a href="#about" className="btn-secondary">
+            ABOUT ME
+          </a>
+        </div>
+
+        <p className="scroll-text">
+          SCROLL TO EXPLORE ↓
+        </p>
       </div>
 
-      <div>
-        {/* Profile image will go here */}
-        <p>Profile Photo</p>
+      <div className="hero-image">
+        <div className="photo-placeholder">
+          <span>TB</span>
+          <p>YOUR PHOTO GOES HERE</p>
+          <small>Professional portrait coming soon</small>
+        </div>
       </div>
     </section>
   );

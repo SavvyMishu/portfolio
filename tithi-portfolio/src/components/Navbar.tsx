@@ -1,19 +1,53 @@
 
-function Navbar() {
-  return (
-    <header>
-      <nav>
-        <a href="#home">TB.</a>
+import { useState } from "react";
+import { navigationLinks } from "../data/navigation";
 
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#contact">Contact</a></li>
+function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <header className="navbar">
+      <nav className="navbar-container">
+
+        {/* Logo */}
+        <a href="#home" className="navbar-logo">
+          TB<span>.</span>
+        </a>
+
+        {/* Mobile Menu Button */}
+        <button
+          type="button"
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={menuOpen}
+          aria-controls="main-navigation"
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
+
+        {/* Navigation Links */}
+        <ul
+          id="main-navigation"
+          className={`navbar-links ${menuOpen ? "active" : ""}`}
+        >
+          {navigationLinks.map((link) => (
+            <li key={link.name}>
+              <a
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
         </ul>
 
-        <a href="#contact">Let's Talk</a>
+        {/* Contact Button */}
+        <a href="#contact" className="navbar-cta">
+          Let's Talk <span>↗</span>
+        </a>
+
       </nav>
     </header>
   );

@@ -1,29 +1,36 @@
 
+import { expertiseItems } from "../data/skills";
+
 function Expertise() {
   return (
-    <section id="expertise">
-      <h2>My Expertise</h2>
+    <section id="expertise" className="expertise section">
+      <div className="section-heading">
+        <p className="section-label">WHAT I WORK ON</p>
 
-      <div>
-        <article>
-          <h3>Frontend Development</h3>
-          <p>Building user interfaces and web experiences.</p>
-        </article>
+        <h2>
+          Skills & <span>Expertise</span>
+        </h2>
 
-        <article>
-          <h3>Backend Development</h3>
-          <p>Learning server-side development and APIs.</p>
-        </article>
+        <p className="section-description">
+          Building a strong foundation in software development
+          through continuous learning and practical experience.
+        </p>
+      </div>
 
-        <article>
-          <h3>Problem Solving</h3>
-          <p>Developing logical thinking and programming skills.</p>
-        </article>
+      <div className="expertise-grid">
+        {expertiseItems.map((item, index) => (
+          <article className="expertise-card" key={item.title}>
+            <span className="expertise-number">
+              0{index + 1}
+            </span>
 
-        <article>
-          <h3>Research & Innovation</h3>
-          <p>Exploring technology through academic research.</p>
-        </article>
+            <h3>{item.title}</h3>
+
+            <p>{item.description}</p>
+
+            <span className="expertise-arrow">↗</span>
+          </article>
+        ))}
       </div>
     </section>
   );

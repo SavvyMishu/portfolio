@@ -1,18 +1,55 @@
 
+import { contactInfo } from "../data/contact";
+
 function Contact() {
   return (
-    <section id="contact">
-      <p>Have a Project in Mind?</p>
-      <h2>Let's Create Something Together.</h2>
+    <section id="contact" className="contact-section section">
+      <div className="contact-content">
+        <p className="section-label">GET IN TOUCH</p>
 
-      <p>
-        I'm open to learning opportunities,
-        collaboration and professional connections.
-      </p>
+        <h2>{contactInfo.heading}</h2>
 
-      <a href="mailto:your-email@example.com">
-        Get In Touch
-      </a>
+        <p className="contact-description">
+          {contactInfo.description}
+        </p>
+
+        <div className="contact-actions">
+          {contactInfo.email && (
+            <a
+              href={`mailto:${contactInfo.email}`}
+              className="contact-primary"
+            >
+              Let's Talk <span>↗</span>
+            </a>
+          )}
+
+          {contactInfo.github && (
+            <a
+              href={contactInfo.github}
+              target="_blank"
+              rel="noreferrer"
+              className="contact-secondary"
+            >
+              GitHub Profile ↗
+            </a>
+          )}
+
+          {contactInfo.linkedin && (
+            <a
+              href={contactInfo.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="contact-secondary"
+            >
+              LinkedIn ↗
+            </a>
+          )}
+        </div>
+
+        <p className="contact-email">
+          {contactInfo.email}
+        </p>
+      </div>
     </section>
   );
 }
