@@ -10,12 +10,12 @@ export const expertiseItems: ExpertiseItem[] = [
   {
     title: "Frontend Development",
     description:
-      "Learning HTML, CSS, JavaScript, React, TypeScript and Tailwind CSS.",
+      "HTML, CSS, JavaScript, React, TypeScript and Tailwind CSS",
   },
   {
     title: "Backend Development",
     description:
-      "Exploring Node.js, server-side development and REST APIs.",
+      "Node.js, server-side development and REST APIs",
   },
   {
     title: "Database & Problem Solving",
